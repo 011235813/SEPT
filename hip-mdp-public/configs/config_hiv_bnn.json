@@ -1,0 +1,31 @@
+{
+    "main" : {
+	"domain" : "hiv",
+	"dir_name" : "hiv_bnn",
+	"N_seeds" : 20,
+	"seed" : 12341,
+	"dir_idx_start" : 1,
+	"phase" : "train"
+    },
+    "2D" : {
+	"num_batch_instances" : 2,
+	"bnn_hidden_layer_size" : 25,
+	"bnn_num_hidden_layers" : 3,
+	"bnn_alpha" : 0.5,
+	"bnn_learning_rate" : 5e-5
+    },
+    "acrobot" : {
+	"num_batch_instances" : 8,
+	"bnn_hidden_layer_size" : 32,
+	"bnn_num_hidden_layers" : 2,
+	"bnn_alpha" : 0.5,
+	"bnn_learning_rate" : 2.5e-4
+    },
+    "hiv" : {
+	"num_batch_instances" : 5,
+	"bnn_hidden_layer_size" : 32,
+	"bnn_num_hidden_layers" : 2,
+	"bnn_alpha" : 0.45,
+	"bnn_learning_rate" : 2.5e-4
+    }
+}

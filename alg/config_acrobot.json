@@ -1,0 +1,14 @@
+{
+    "N_train_instances" : 8,
+    "n_state" : 4,
+    "n_action" : 3,
+    "n_hidden" : 4,
+    "traj_length" : 5,
+    "min_samples_before_train" : 400,
+    "save_threshold" : null,
+    "N_validation_instances" : 5,
+    "N_test_instances" : 5,
+    "N_test_episodes" : 1,
+    "test_steps" : 200,
+    "params_filename" : "acrobot_preset_hidden_params"
+}

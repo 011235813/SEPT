@@ -1,0 +1,143 @@
+{
+    "main" : {
+	"domain" : "hiv",
+	"N_seeds" : 3,
+	"seed" : 12341,
+	"dir_name" : "hiv",
+	"dir_idx_start" : 1,
+	"model_name" : "model.ckpt",
+	"N_instances" : 500,
+	"N_episodes" : 5,
+	"period" : 100,
+	"phase" : "test",
+	"test_record_z" : false,
+	"autoencoder" : "VAE",
+	"alg_name" : "sept"
+    },
+    "VAE" : {
+	"buffer_size" : 1000,
+	"batch_size" : 64,
+	"n_latent" : 6,
+	"n_h_encoder" : 300,
+	"n_h_decoder" : 256,
+	"lr" : 0.0001,
+	"num_epochs" : 10,
+	"entropy_coeff" : 0,
+	"dual" : false,
+	"tau" : 0.005,
+	"beta" : 1
+    },
+    "explorer" : {
+	"lr" : 0.001,
+	"n_h1" : 32,
+	"n_h2" : 32,
+	"n_h3" : 32,
+	"activation" : "relu",
+	"num_epochs" : 1,
+	"reward" : "vae"
+    },
+    "DDQN" : {
+	"activate" : true,
+	"z_input" : true,
+	"eta_input" : false,
+	"n_h1" : 256,
+	"n_h2" : 512,
+	"batch_size" : 32,
+	"steps_per_train" : 10,
+	"epsilon_start" : 0.3,
+	"epsilon_end" : 0.15,
+	"lr" : 0.001,
+	"clip" : 2.5,
+	"gamma" : 0.99,
+	"tau" : 0.005
+    },
+    "PER" : {
+	"activate" : true,
+	"buffer_size" : 10000,
+	"num_strata_samples" : 1,
+	"alpha" : 0.2,
+	"beta_zero" : 0.1
+    },
+    "baseline" : {
+	"activate" : true,
+	"real_z_input" : false,
+	"epopt" : false
+    },
+    "ablation" : {
+	"use_pi_e" : false,
+	"equalize_reward" : false
+    },
+    "AVB" : {
+	"buffer_size" : 1000,
+	"batch_size" : 64,
+	"n_latent" : 2,
+	"n_noise" : 4,
+	"n_h_encoder" : 300,
+	"n_h2_encoder" : 64,
+	"n_h_decoder" : 256,
+	"lr" : 0.0001,
+	"lr_adversary" : 0.01,
+	"num_epochs" : 10,
+	"z_dist" : "gauss",
+	"cond_dist" : "gauss",
+	"entropy_coeff" : 0,
+	"dual" : false,
+	"tau" : 0.005
+    },
+    "PPO" : {
+	"z_input" : false,
+	"eta_input" : false,
+	"n_h1" : 32,
+	"n_h2" : 32,
+	"num_steps" : 500,
+	"value_loss_coef" : 1.0,
+	"entropy_coef" : 0.0,
+	"lr" : 3e-4,
+	"eps" : 1e-5,
+	"max_grad_norm" : 0.5,
+	"clip_param" : 0.2,
+	"ppo_epoch" : 10,
+	"num_mini_batch" : 32,
+	"use_gae" : true,
+	"gae_lambda" : 0.95,
+	"gamma" : 0.99,
+	"action_space" : "continuous"
+    },
+    "ppo2" : {
+	"total_timesteps" : 5e5,
+	"nsteps" : 1024,
+	"ent_coef" : 0.0,
+	"lr" : 3e-4,
+	"vf_coef" : 2.0,
+	"max_grad_norm" : null,
+	"gamma" : 0.99,
+	"lam" : 0.95,
+	"log_interval" : 10,
+	"nminibatches" : 64,
+	"noptepochs" : 10,
+	"cliprange" : 0.2,
+	"save_interval" : 50
+    },
+    "policy" : {
+	"network" : "mlp",
+	"num_layers" : 2,
+	"num_hidden" : 256,
+	"normalize_observations" : false
+    },
+    "environment" : {
+	"env_name" : "Cancer-v0",
+	"observe_toxicity" : true,
+	"observe_ewma_action" : true,
+	"ewma_alpha" : 1.0,
+	"reseed" : "post-burn-in",
+	"complete_episode" : false,
+	"observation_day" : 1,
+	"reward_mode" : "score",
+	"seed" : null,
+	"reward_scale" : 0.1
+    },
+    "epopt" : {
+	"n_epopt" : 100,
+	"epsilon" : 0.1
+    }
+}

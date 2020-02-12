@@ -1,0 +1,16 @@
+{
+    "N_train_instances" : 5,
+    "n_state" : 6,
+    "n_action" : 4,
+    "n_hidden" : 12,
+    "traj_length" : 8,
+    "min_samples_before_train" : 200,
+    "save_threshold" : null,
+    "N_validation_instances" : 5,
+    "N_test_instances" : 5,
+    "N_test_episodes" : 1,
+    "test_steps" : 1000,
+    "params_filename" : "hiv_preset_hidden_params_run1",
+    "reward_std_filename" : "hiv_rewards_standardization_run1",
+    "state_std_filename" : "hiv_standardization_arrays_run1"
+}

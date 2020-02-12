@@ -1,0 +1,16 @@
+{
+    "N_train_instances" : 2,
+    "preset_hidden_params" : [{"latent_code":1}, {"latent_code":2}],
+    "grid_beta" : 0.1,
+    "t_switch" : null,
+    "n_state" : 2,
+    "n_action" : 4,
+    "n_hidden" : 2,
+    "traj_length" : 2,
+    "min_samples_before_train" : 100,
+    "save_threshold" : null,
+    "N_validation_instances" : 0,
+    "N_test_instances" : 10,
+    "N_test_episodes" : 1,
+    "test_steps" : 50
+}

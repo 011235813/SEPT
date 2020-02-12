@@ -1,0 +1,74 @@
+{
+    "main" : {
+	"domain" : "2D",
+	"N_seeds" : 20,
+	"seed" : 12341,
+	"dir_name" : "2D_epopt",
+	"dir_idx_start" : 1,
+	"model_name" : "model.ckpt",
+	"N_instances" : 1000,
+	"N_episodes" : 10,
+	"period" : 100,
+	"phase" : "train",
+	"test_record_z" : false,
+	"autoencoder" : "VAE",
+	"alg_name" : "epopt"
+    },
+    "VAE" : {
+	"buffer_size" : 1000,
+	"batch_size" : 64,
+	"n_latent" : 6,
+	"n_h_encoder" : 300,
+	"n_h_decoder" : 256,
+	"lr" : 0.0001,
+	"num_epochs" : 10,
+	"entropy_coeff" : 0,
+	"dual" : false,
+	"tau" : 0.005,
+	"beta" : 1
+    },
+    "probe" : {
+	"lr" : 0.001,
+	"n_h1" : 32,
+	"n_h2" : 32,
+	"n_h3" : 32,
+	"activation" : "relu",
+	"num_epochs" : 1,
+	"reward" : "vae"
+    },
+    "DDQN" : {
+	"activate" : true,
+	"z_input" : false,
+	"eta_input" : false,
+	"n_h1" : 256,
+	"n_h2" : 512,
+	"batch_size" : 32,
+	"steps_per_train" : 10,
+	"epsilon_start" : 1.0,
+	"epsilon_end" : 0.15,
+	"lr" : 0.001,
+	"clip" : 2.5,
+	"gamma" : 0.99,
+	"tau" : 0.005
+    },
+    "PER" : {
+	"activate" : true,
+	"buffer_size" : 10000,
+	"num_strata_samples" : 1,
+	"alpha" : 0.2,
+	"beta_zero" : 0.1
+    },
+    "baseline" : {
+	"activate" : false,
+	"real_z_input" : false,
+	"epopt" : true
+    },
+    "ablation" : {
+	"use_pi_e" : false,
+	"equalize_reward" : false
+    },
+    "epopt" : {
+	"n_epopt" : 100,
+	"epsilon" : 0.1
+    }
+}
