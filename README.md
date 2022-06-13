@@ -42,6 +42,17 @@ Choice of experimental domain is selected by `config['main']['domain']` within t
 * Execute test script `python test_multiprocess.py configs/config_2d_sept.json`
 * Results will be stored in `test_<int>.csv` and `test_time_<int>.pkl` in `results/2D_sept/`
 
+## Citation
+
+<pre>
+@inproceedings{yang2019single,
+  title={Single Episode Policy Transfer in Reinforcement Learning},
+  author={Yang, Jiachen and Petersen, Brenden and Zha, Hongyuan and Faissol, Daniel},
+  booktitle={International Conference on Learning Representations},
+  year={2019}
+}
+</pre>
+
 ## License
 
 SEPT is distributed under the terms of the BSD-3 license. All new contributions must be made under this license.
